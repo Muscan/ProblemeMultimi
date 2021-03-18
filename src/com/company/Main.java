@@ -43,8 +43,44 @@ public class Main {
 
         System.out.println("TotalPare - TotalImpare = "+ Math.abs(totalPare - totalImpare));
     }
+    // Se citește un vector(Lista) cu n elemente, numere naturale.
+    // Să se afișeze elementele din vector(Lista)
+    // care sunt multipli ai ultimului element.
+    // Un numar din lista impartit la ultimul nr. are rezultatul intreg(18/9 =2).
+    // Catul impartirii unui numar la ultimul numar are rezultatul zero(18%9=0)
+    public static void Sir2(){
+        //Initializare scanner pentru citire de la tastatura
+        Scanner readerTastatura = new Scanner(System.in);
+        System.out.println("Insert the number counter for the test 2 ");
+        //Initializare lista numere intregi
+        List<Integer> elemente = new ArrayList<>();
+        //citim nr. de elemente pe care vrem sa le adaugam in lista
+        Integer n = readerTastatura.nextInt();
+        System.out.println("You entered " + n);
+        //Citire n numere intregi de la tastatura
+        for(int i = 0; i<n ; i++){
+            System.out.println("Insert nr. " + i);
+            try {
+                //adaugare nr. citit in lista
+                elemente.add(readerTastatura.nextInt());
+            } catch (Exception e) {
+                System.out.println("Only numbers allowed");
+            }
+        }
+        List<Integer> rezultat = new ArrayList<>();
+
+        //parcurgere lista
+        for(int i = 0; i<n-1; i++){
+            //verificare conditie linile 49-50
+            if (elemente.get(i)%elemente.get(n-1)==0)
+            //Daca e indeplinita conditia, se afiseaza numarul
+            rezultat.add(elemente.get(i));
+        }
+        System.out.println("Elementele multiple ultimului element sunt: " + rezultat.toString());
+    }
     public static void main(String[] args) {
-        Sir1();
+        //Sir1();
+        Sir2();
 
     }
 }
