@@ -43,7 +43,6 @@ public class Main {
 
         System.out.println("TotalPare - TotalImpare = "+ Math.abs(totalPare - totalImpare));
     }
-
     public static void main(String[] args) {
         Sir1();
 
